@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Réserver votre séance | Photorama</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="js/boutique.js"></script>
+</head>
+<body id="boutique">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Studio Photorama</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="boutique.html">Boutique en ligne
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="repertoire.html">Répertoire des photographes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+
+    <h1>Boutique en ligne</h1>
+    
+    <div class="row">
+      <div class="col-4">
+        <div id="panier">
+          <table class="table"> 
+            <thead class="thead-light">
+              <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+              </tr>
+            </thead>
+            <tbody id="bodyPanier">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total </td>
+                <td><strong><span id="divTotalPanier">0.00</span> $ </strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div id="paiement">
+          <table class="table">
+          </table>
+
+          <form onsubmit="return validerPaiement(this)">
+            <div class="form-group">
+              <label for="nom">Nom du détenteur de la carte</label>
+              <input type="text" class="form-control" id="nom">
+            </div>
+            <div class="form-group">
+              <label for="numero">Numéro de la carte</label>
+              <input type="text" class="form-control" id="numero">
+            </div>
+            <div class="form-group">
+              <label>Date d'expiration</label>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <select class="form-control">
+                    <option>01- Janvier</option>
+                    <option>02- Février</option>
+                    <option>03- Mars</option>
+                    <option>04- Avril</option>
+                    <option>05- Mai</option>
+                    <option>06- Juin</option>
+                    <option>07- Juillet</option>
+                    <option>08- Août</option>
+                    <option>09- Septembre</option>
+                    <option>10- Octobre</option>
+                    <option>11- Novembre</option>
+                    <option>12- Décembre</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control">
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cvc">CVC</label>
+              <input type="text" class="form-control" id="cvc">
+            </div>
+            <input type="submit" class="btn btn-primary" onClick="validerPaiement(f)" value="Procèder au paiement">
+          </form>
+        </div>
+      </div>
+      <div class="col-8">
+        <div id="produits">
+          <div class="row row-cols-3">
+            <article class="col">
+              <div class="card">
+                <div class="card-header">1 199,00 $</div>
+                <div class="card-body">
+                  <img src="images/canon-t8i.jpg" alt="Canon t8i"/>
+                  <p>Canon EOS Rebel T8i / EF-S 18-55mm IS STM</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('canon-t8i.jpg')">Ajouter au panier</a>
+             
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">1 999,99 $</div>
+                <div class="card-body">
+                  <img src="images/canon-90D.jpg" alt="Canon 90D"/>
+                  <p>Canon EOS 90D / 18-135mm</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('canon-90D.jpg')">Ajouter au panier</a>
+                  
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">1 599,00 $</div>
+                <div class="card-body">
+                  <img src="images/nikon-z50.jpg" alt="Nikon Z50"/>
+                  <p>Nikon Z 50 / Z DX 16-50mm / Z DX 50-250mm</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('nikon-z50.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">229,95 $</div>
+                <div class="card-body">
+                  <img src="images/flash-godox.jpg" alt="Flash godox nikon"/>
+                  <p>Flash Godox V860IIN pour Nikon</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('flash-godox.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">669,00 $</div>
+                <div class="card-body">
+                  <img src="images/objectif-canon.jpg" alt="Objectif canon EF-M"/>
+                  <p>Canon EF-M 18-150mm f/3.5-6.3 IS STM</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('objectif-canon.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">2 899,00 $</div>
+                <div class="card-body">
+                  <img src="images/objectif-canon-macro.jpg" alt="Objectif canon macro"/>
+                  <p>Canon TS-E 90mm f/2.8L Macro</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('objectif-canon-macro.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">239,95 $</div>
+                <div class="card-body">
+                  <img src="images/trepied.jpg" alt="Trépied"/>
+                  <p>Trépied Vanguard VEO 2 265AB / Tête BH-50</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('trepied.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">69,95 $</div>
+                <div class="card-body">
+                  <img src="images/sac.jpg" alt="Sac d'épaule"/>
+                  <p>LowePro Pro tactic SH-180</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('sac.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card">
+                <div class="card-header">52,95 $</div>
+                <div class="card-body">
+                  <img src="images/carte-memoire.jpg" alt="Carte mémoire"/>
+                  <p>Carte mémoire Lexar SDXC 1000x 128Go</p>
+                  <a class="btn btn-warning" onClick="ajouterAuPanier('carte-memoire.jpg')">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      <p>Sources photo: https://www.photolaplante.com</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+</html>

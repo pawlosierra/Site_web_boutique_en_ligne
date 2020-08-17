@@ -1,0 +1,30 @@
+#boutique{
+  background-color: #dedede;
+}
+.jumbotron{
+  background: url('../images/malte-wingen-5qT09yIbROk-unsplash.jpg') no-repeat center center;
+  background-size:cover;
+}
+#produits, #panier, #paiement{
+  background-color:white;
+  padding:20px;
+  margin-bottom:20px;
+}
+#produits .card{
+  text-align:center;
+  margin-bottom:20px;
+}
+#produits .col img{
+  height:150px;
+}
+.petite-image{
+  height:50px;
+}
+
+h1{
+  margin:30px 0;
+}
+
+#bodyPanier tr:hover{
+  background-color:#ccc;
+}
